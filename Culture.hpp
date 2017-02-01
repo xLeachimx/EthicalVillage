@@ -9,13 +9,14 @@
 #define CULTURE_HPP
 
 class Village;
+class Villager;
 
 class Culture{
 public:
 	//defining characteristics
-	virtual int starting() = 0;
+	virtual void generatePopulation(Villager *citizens, int size) = 0;
 	virtual void dailyDuties(int actor, Villager *population, int size) = 0;
-	virtual void utility(Village *ville) const = 0;
+	virtual void utility(const Village &ville) = 0;
 protected:
 private:
 };

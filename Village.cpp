@@ -22,7 +22,7 @@ Village::Village(Descriptor population, Culture *cultural){
 
 	//initialize citizens with resources according to culture
 	for(int i = 0;i < pop;i++){
-		citizen = culture.starting();
+		culture.generatePopulation(citizens,pop);
 	}
 }
 
@@ -89,21 +89,21 @@ Village &Village::operator=(const Village &copy){
 //Boolean operators for genetic comparison
 //This evaluates utility of a village by the culture of the village asked
 bool Village::operator>(const Village &other){
-	return (culture.utility(this) > culture.utility(&other))
+	return (culture.utility(this) > culture.utility(other))
 }
 
 bool Village::operator<(const Village &other){
-	return (culture.utility(this) < culture.utility(&other))
+	return (culture.utility(this) < culture.utility(other))
 }
 
 bool Village::operator==(const Village &other){
-	return (culture.utility(this) == culture.utility(&other))
+	return (culture.utility(this) == culture.utility(other))
 }
 
 bool Village::operator>=(const Village &other){
-	return (culture.utility(this) >= culture.utility(&other))
+	return (culture.utility(this) >= culture.utility(other))
 }
 
 bool Village::operator<=(const Village &other){
-	return (culture.utility(this) <= culture.utility(&other))
+	return (culture.utility(this) <= culture.utility(other))
 }

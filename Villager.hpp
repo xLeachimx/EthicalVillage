@@ -10,11 +10,14 @@
 
 class Villager{
 	Villager();
+	Villager(int starting);
 	Villager(const Villager &copy);
 
 	//villager methods
 	int worth();
 	bool isAlive();
+	void addResources(int num);
+	void kill();
 
 	//operators
 	Villager &operator=(const Villager &copy);
